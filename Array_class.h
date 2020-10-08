@@ -1,5 +1,6 @@
 #include <ctime>
 #include <algorithm>
+
 class ARRAY_CLASS {
     int size;
     int *main_array;
@@ -8,14 +9,14 @@ public:
     ARRAY_CLASS(int size, int array[]);
     ~ARRAY_CLASS();
     void insertion_sort();
-    void generate_random(int);
+    void generate_random(int, int, int);
     void print();
     bool check_correctness();
 };
 
 ARRAY_CLASS::ARRAY_CLASS() {
     size = 0;
-    main_array = NULL;
+    main_array = nullptr;
 }
 
 ARRAY_CLASS::ARRAY_CLASS(int size, int *array) {
@@ -42,12 +43,12 @@ void ARRAY_CLASS::insertion_sort() {
     }
 }
 
-void ARRAY_CLASS::generate_random(int n) {
+void ARRAY_CLASS::generate_random(int n, int a, int b) {
     size = n;
     main_array = new int[size];
     srand(time(NULL));
     for (int i = 0; i < size; ++i) {
-        main_array[i] = rand() % 1000 - 500;
+        main_array[i] = rand() % (a + b) + a;
     }
 }
 
@@ -59,6 +60,8 @@ void ARRAY_CLASS::print() {
 }
 
 bool ARRAY_CLASS::check_correctness() {
+    if(size == 0)
+        return true;
     int test_array[size];
     std::copy(main_array, main_array + size, test_array);
     std::sort(test_array, test_array + size);
