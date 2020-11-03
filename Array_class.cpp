@@ -1,4 +1,5 @@
 #include "Array_class.h"
+#include "Heap_class.h"
 #include <ctime>
 #include <algorithm>
 #include <iostream>
@@ -32,6 +33,8 @@ void ARRAY_CLASS::insertion_sort() {
     }
 }
 
+
+
 void ARRAY_CLASS::generate_random(int n, int a, int b) {
     size = n;
     main_array = new int[size];
@@ -61,3 +64,14 @@ bool ARRAY_CLASS::check_correctness() {
     }
     return true;
 }
+//
+//void ARRAY_CLASS::heap_sort() {
+//    HEAP_CLASS heap(main_array, size);
+//    heap.build_heap();
+//    for(int i = size; i>= 1;i--){
+//        std::
+//    }
+//}
+
+
+
