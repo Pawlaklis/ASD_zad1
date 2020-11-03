@@ -2,11 +2,11 @@
 #include <iostream>
 
 int HEAP_CLASS::left_child(int i) {
-    return i*2 + 1;
+    return (i<<1) + 1;
 }
 
 int HEAP_CLASS::right_child(int i) {
-    return 2*i + 2;
+    return (i<<1) + 2;
 }
 
 HEAP_CLASS::HEAP_CLASS(int A[], int n) {
