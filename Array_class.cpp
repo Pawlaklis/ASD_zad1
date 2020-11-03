@@ -57,21 +57,23 @@ bool ARRAY_CLASS::check_correctness() {
     int test_array[size];
     std::copy(main_array, main_array + size, test_array);
     std::sort(test_array, test_array + size);
-    insertion_sort();
+    heap_sort();
     for (int i = 0; i < size; ++i) {
         if(test_array[i] != main_array[i])
             return false;
     }
     return true;
 }
-//
-//void ARRAY_CLASS::heap_sort() {
-//    HEAP_CLASS heap(main_array, size);
-//    heap.build_heap();
-//    for(int i = size; i>= 1;i--){
-//        std::
-//    }
-//}
+
+void ARRAY_CLASS::heap_sort() {
+    HEAP_CLASS heap(main_array, size);
+    heap.build_heap();
+    for(int i = size - 1; i > 0;i--){
+        std::swap(heap.arr[0], heap.arr[i]);
+        heap.size--;
+        heap.heapify(0);
+    }
+}
 
 
 
