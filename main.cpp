@@ -1,22 +1,25 @@
 #include <iostream>
 #include "Array_class.h"
 #include "Array_class.h"
-
+#include "BST_tree_class.h"
+#include "tree_class.h"
 
 int main() {
-    ARRAY_CLASS A1;
-    int N, a, b;
-    std::cout << "Enter size of wanted randomly generated array\n";
-    std::cin >> N;
-    std::cout << "Enter range of wanted randomly generated array\n";
-    std::cin >> a;
-    std::cin >> b;
-    A1.generate_random(N, a, b);
-    std::cout << "Unsorted array:\n";
-    A1.print();
-    std::cout << std::boolalpha << "Is sorting correct: " << A1.check_correctness() << std::endl;
-    std::cout << "Sorted array:\n";
-    A1.print();
+    BST Tree;
+
+    Tree.insert_element(4);
+    Tree.insert_element(2);
+    Tree.insert_element(1);
+    Tree.insert_element(3);
+    Tree.insert_element(6);
+    Tree.insert_element(5);
+    Tree.insert_element(7);
+
+    Tree.delete_element(4);
+
+    Tree.inorder(Tree.root);
+
+
 
     return 0;
 }
