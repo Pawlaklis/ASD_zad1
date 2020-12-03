@@ -17,6 +17,8 @@ public:
     ~tree_class();
 
     void inorder(Node*);
+    void preorder(Node *);
+    void postorder(Node *);
 };
 
 

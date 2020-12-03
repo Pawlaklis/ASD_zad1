@@ -24,3 +24,19 @@ void tree_class::inorder(Node * root) {
         inorder(root->right);
     }
 }
+
+void tree_class::preorder(Node * root) {
+    if (!root)
+        return;
+    std::cout << root->value << " ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
+void tree_class::postorder(Node *) {
+    if (!root)
+        return;
+    preorder(root->left);
+    preorder(root->right);
+    std::cout << root->value << " ";
+}
