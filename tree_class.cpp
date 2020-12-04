@@ -3,6 +3,7 @@
 
 Node::Node(int k){
     value = k;
+    height = 1;
     left = nullptr;
     right = nullptr;
 }
@@ -26,7 +27,7 @@ void tree_class::inorder(Node * root) {
 }
 
 void tree_class::preorder(Node * root) {
-    if (!root)
+    if (root != nullptr)
         return;
     std::cout << root->value << " ";
     preorder(root->left);
@@ -34,7 +35,7 @@ void tree_class::preorder(Node * root) {
 }
 
 void tree_class::postorder(Node *) {
-    if (!root)
+    if (root != nullptr)
         return;
     preorder(root->left);
     preorder(root->right);

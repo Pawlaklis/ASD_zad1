@@ -4,6 +4,7 @@
 struct Node{
 public:
     int value;
+    int height;
     Node* left;
     Node* right;
     Node(int);
